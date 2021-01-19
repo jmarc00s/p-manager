@@ -1,4 +1,4 @@
-# p-manager
+# p-manager (Productivity Manager)
 
 ## Build Setup
 
