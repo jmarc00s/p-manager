@@ -16,9 +16,9 @@ export default {
   data() {
     return {
       fields: [
-        {key: 'sprint', label: 'Sprint', class:"text-center"},
-        {key: 'pontos', label: 'Pontos', class:"text-center"},
-        {key: 'homologadas', label: 'Homologadas', class:"text-center"},
+        {key: 'numeroSprint', label: 'Sprint', class:"text-center"},
+        {key: 'pontosEntregues', label: 'Pontos', class:"text-center"},
+        {key: 'historiasHomologadas', label: 'Homologadas', class:"text-center"},
         {key: 'erros', label: 'Erros', class:"text-center"},
       ]
     }

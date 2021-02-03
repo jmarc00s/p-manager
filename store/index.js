@@ -27,6 +27,9 @@ export const actions = {
 }
 
 export const getters = {
-  sprints: (state) => state.sprints
+  sprints: (state) => state.sprints,
+  totalSprints: (state) => state.sprints.length,
+  totalHistoriasHomologadas: (state) => state.sprints.reduce((acc, curr) => acc + curr.historiasHomologadas, 0),
+  totalErros: (state) => state.sprints.reduce((acc, curr) => acc + curr.erros, 0)
 }
 
