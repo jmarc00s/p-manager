@@ -10,7 +10,7 @@
 export default {
   computed: {
     itens(){
-      return this.$store.getters.sprints;
+      return [...this.$store.getters.sprints];
     }
   },
   data() {

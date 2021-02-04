@@ -16,7 +16,7 @@ import Dashboard from '~/components/Dashboard.vue'
 import TabelaSprint from '~/components/TabelaSprint.vue'
 export default {
   components: { Dashboard, TabelaSprint },
-  created() {
+  mounted() {
     this.$store.dispatch('carregarDados');
   }
 }

@@ -45,7 +45,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseUrl: 'https://p-manager-6945c-default-rtdb.firebaseio.com/'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
