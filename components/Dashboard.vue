@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col">
           <b-card title="Gráfico">
-            <grafico-barras></grafico-barras>
+            <GraficoBarras v-if="sprints" :chartData="dadosGrafico" />
           </b-card>
         </div>
       </div>
@@ -34,7 +34,29 @@ export default {
       ]
     },
     sprints() {
-      //return this.$store.getters.sprints;
+      return this.$store.getters.sprints;
+    },
+    dadosGrafico() {
+      return  {
+        labels: this.$store.getters.sprints.map(c => c.numeroSprint),
+        datasets: [
+          {
+            label: 'Pontos entregues',
+            backgroundColor: '#27ae60',
+            data: this.$store.getters.pontosEntregues
+          },
+          {
+            label: 'Histórias homologadas',
+            backgroundColor: '#3498db',
+            data: this.$store.getters.historiasHomologadas
+          },
+          {
+            label: 'Erros',
+            backgroundColor: '#c0392b',
+            data: this.$store.getters.erros
+          }
+        ]
+      }
     }
   },
   data() {

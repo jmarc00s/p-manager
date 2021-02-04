@@ -1,10 +1,8 @@
 <template>
   <div class="container-fluid row mt-3">
-
     <div class="col-md-8">
       <Dashboard class="dashboard px-5" />
     </div>
-
     <div class="col-md-4">
       <TabelaSprint class="tabela px-5" />
     </div>
@@ -16,7 +14,7 @@ import Dashboard from '~/components/Dashboard.vue'
 import TabelaSprint from '~/components/TabelaSprint.vue'
 export default {
   components: { Dashboard, TabelaSprint },
-  mounted() {
+  created() {
     this.$store.dispatch('carregarDados');
   }
 }

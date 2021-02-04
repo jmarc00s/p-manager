@@ -1,25 +1,20 @@
 
 <script>
-import { Bar } from 'vue-chartjs'
+import { Bar, mixins } from 'vue-chartjs'
 export default {
   extends: Bar,
-  mounted() {
-    this.chartData =  {
-      labels: this.$store.getters.sprints.map(c => c.numeroSprint),
-      datasets: [
-        {
-          label: 'Pontos entregues',
-          backgroundColor: '#27ae60',
-          data: this.$store.getters.sprints.map(c => c.pontosEntregues)
-        }
-      ]
+  mixins: [mixins.reactiveProp],
+  props: {
+    chartData: {
+      type: Object,
+      default: null
     }
-    console.log(this.chartData);
+  },
+  mounted() {
     this.renderChart(this.chartData, this.options);
   },
   data() {
     return {
-      chartData: null,
       options: {
         responsive: true,
         maintainAspectRatio: false
